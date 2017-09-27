@@ -13,6 +13,13 @@ router.get('/users', function (req, res) {
     })
 })
 
+router.post('/users', (req, res) => {
+  db.addUser(req.body, req.app.get('connection'))
+    .then((userId) => {
+      res.redirect('/profile/' + userId)
+    })
+})
+
 router.get('/profile/:id', function (req, res) {
   db.getUser(req.params.id, req.app.get('connection'))
     .then(function (user) {
