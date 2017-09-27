@@ -4,9 +4,10 @@
     <title>EDA Phase 1 Express Boilerplate</title>
   </head>
   <body>
+    <h1>People of EDA Land</h1>
     <ul>
     {{#each users}}
-      <li>{{name}}</li>
+      <li><a href="/profile/{{id}}">{{name}}</a></li>
     {{/each}}
     </ul>
   </body>
